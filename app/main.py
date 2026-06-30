@@ -1,6 +1,4 @@
-from apply_knight_characteristic.apply_armour import apply_armour
-from apply_knight_characteristic.apply_weapon import apply_weapon
-from apply_knight_characteristic.apply_potion import apply_potion
+from apply_knight_characteristic.prepare_knights import prepare_knight
 from battle.check_fell import check_fell
 from battle.knight_vs_knight import knight_vs_knight
 from battle.result import result
@@ -96,53 +94,12 @@ KNIGHTS = {
 def battle(knights_config: dict) -> dict:
     # BATTLE PREPARATIONS:
 
-    # lancelot
     lancelot = knights_config["lancelot"]
-
-    # apply armour
-    apply_armour(lancelot)
-
-    # apply weapon
-    apply_weapon(lancelot)
-
-    # apply potion if exist
-    apply_potion(lancelot)
-
-    # arthur
     arthur = knights_config["arthur"]
-
-    # apply armour
-    apply_armour(arthur)
-
-    # apply weapon
-    apply_weapon(arthur)
-
-    # apply potion if exist
-    apply_potion(arthur)
-
-    # mordred
     mordred = knights_config["mordred"]
-
-    # apply armour
-    apply_armour(mordred)
-
-    # apply weapon
-    apply_weapon(mordred)
-
-    # apply potion if exist
-    apply_potion(mordred)
-
-    # red_knight
     red_knight = knights_config["red_knight"]
 
-    # apply armour
-    apply_armour(red_knight)
-
-    # apply weapon
-    apply_weapon(red_knight)
-
-    # apply potion if exist
-    apply_potion(red_knight)
+    prepare_knight(lancelot, arthur, mordred, red_knight)
 
     # -------------------------------------------------------------------------------
     # BATTLE:
