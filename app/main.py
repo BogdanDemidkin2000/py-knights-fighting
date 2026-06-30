@@ -1,7 +1,7 @@
-from apply_knight_characteristic.prepare_knights import prepare_knight
-from battle.check_fell import check_fell
-from battle.knight_vs_knight import knight_vs_knight
-from battle.result import result
+from app.apply_knight_characteristic.prepare_knights import prepare_knight
+from app.battle.check_fell import check_fell
+from app.battle.knight_vs_knight import knight_vs_knight
+from app.battle.result import result
 
 KNIGHTS = {
     "lancelot": {
@@ -94,12 +94,15 @@ KNIGHTS = {
 def battle(knights_config: dict) -> dict:
     # BATTLE PREPARATIONS:
 
-    lancelot = knights_config["lancelot"]
-    arthur = knights_config["arthur"]
-    mordred = knights_config["mordred"]
-    red_knight = knights_config["red_knight"]
+    names = ["lancelot", "arthur", "mordred", "red_knight"]
 
-    prepare_knight(lancelot, arthur, mordred, red_knight)
+    knights_list = [lancelot, arthur, mordred, red_knight] = \
+        [knights_config[name] for name in names]
+    # lancelot = knights_config["lancelot"]
+    # arthur = knights_config["arthur"]
+    # mordred = knights_config["mordred"]
+    # red_knight = knights_config["red_knight"]
+    prepare_knight(knights_list)
 
     # -------------------------------------------------------------------------------
     # BATTLE:
