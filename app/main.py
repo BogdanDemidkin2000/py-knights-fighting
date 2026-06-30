@@ -160,6 +160,3 @@ def battle(knights_config: dict) -> dict:
 
     # Return battle results:
     return result([lancelot, arthur, mordred, red_knight])
-
-
-print(battle(KNIGHTS))
